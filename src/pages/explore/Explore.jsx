@@ -99,37 +99,13 @@ const Explore = () => {
     return (
         <div className="explorePage">
             <ContentWrapper>
-                <div className="pageHeader">
+                <div className="pageheader">
                     <div className="pageTitle">
                         {mediaType === "tv"
                             ? "Explore TV Shows"
                             : "Explore Movies"}
                     </div>
-                    <div className="filters">
-                        <Select
-                            isMulti
-                            name="genres"
-                            value={genre}
-                            closeMenuOnSelect={false}
-                            options={genresData?.genres}
-                            getOptionLabel={(option) => option.name}
-                            getOptionValue={(option) => option.id}
-                            onChange={onChange}
-                            placeholder="Select genres"
-                            className="react-select-container genresDD"
-                            classNamePrefix="react-select"
-                        />
-                        <Select
-                            name="sortby"
-                            value={sortby}
-                            options={sortbyData}
-                            onChange={onChange}
-                            isClearable={true}
-                            placeholder="Sort by"
-                            className="react-select-container sortbyDD"
-                            classNamePrefix="react-select"
-                        />
-                    </div>
+                    
                 </div>
                 {loading && <Spinner initial={true} />}
                 {!loading && (
@@ -139,7 +115,7 @@ const Explore = () => {
                                 className="content"
                                 dataLength={data?.results?.length || []}
                                 next={fetchNextPageData}
-                                hasMore={pageNum <= data?.total_pages}
+                                hasMore={pageNum <= data.total_pages}
                                 loader={<Spinner />}
                             >
                                 {data?.results?.map((item, index) => {
@@ -148,7 +124,7 @@ const Explore = () => {
                                         <MovieCard
                                             key={index}
                                             data={item}
-                                            mediaType={mediaType}
+                                            
                                         />
                                     );
                                 })}
