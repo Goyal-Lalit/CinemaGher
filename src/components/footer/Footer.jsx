@@ -2,7 +2,6 @@ import React from "react";
 import {
     FaFacebookF,
     FaInstagram,
-    FaTwitter,
     FaLinkedin,
 } from "react-icons/fa";
 
@@ -18,19 +17,14 @@ const Footer = () => {
                     <li className="menuItem">Terms Of Use</li>
                     <li className="menuItem">Privacy-Policy</li>
                     <li className="menuItem">About</li>
-                   
-                    
+                    <li className="menuItem">ContactUs</li>
                 </ul>
-                
                 <div className="socialIcons">
                     <span className="icon">
                         <FaFacebookF />
                     </span>
                     <span className="icon">
                         <FaInstagram />
-                    </span>
-                    <span className="icon">
-                        <FaTwitter />
                     </span>
                     <span className="icon">
                         <FaLinkedin />

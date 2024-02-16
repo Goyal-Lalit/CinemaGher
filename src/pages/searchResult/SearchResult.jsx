@@ -7,8 +7,7 @@ import "./style.scss";
 import { fetchDataFromApi } from "../../utils/api";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/MovieCard";
-import Spinner from "../../components/spinner/Spinner";
-import noResults from "../../assets/no-results.png";
+
 
 const SearchResult = () => {
     const [data, setData] = useState(null);
@@ -50,7 +49,6 @@ const SearchResult = () => {
 
     return (
         <div className="searchResultsPage">
-            {loading && <Spinner initial={true} />}
             {!loading && (
                 <ContentWrapper>
                     {data?.results?.length > 0 ? (
@@ -67,7 +65,6 @@ const SearchResult = () => {
                                 dataLength={data?.results?.length || []}
                                 next={fetchNextPageData}
                                 hasMore={pageNum <= data?.total_pages}
-                                loader={<Spinner />}
                             >
                                 {data?.results.map((item, index) => {
                                     if (item.media_type === "person") return;
